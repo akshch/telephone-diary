@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    if params[:search].present?
+      @contacts = Contact.where("first_name =? or mobile_number =?", params[:search], params[:search])
+    else
+      @contacts = Contact.all
+    end
   end
 
   def new
@@ -19,6 +23,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @contact.update(counter: @contact.counter+1)
   end
 
   def edit

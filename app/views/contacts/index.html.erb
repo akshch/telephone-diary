@@ -1,4 +1,14 @@
 <h1>All Contacts</h1>
+<%= form_tag(contacts_path, "method"=>:get) do %>
+    <div class="col-sm-12">
+      <div class="col-sm-3" style="margin-top: -9px">
+        <%= text_field_tag "search", params[:search], :placeholder => 'Name or Telephone Number', :class=>" col-sm-4 form-control" %>
+      </div>
+      <div class="col-sm-1" style="margin-top: 7px">
+        <%= submit_tag 'Search', :class => "btn btn-primary"%>
+      </div>
+    </div>
+  <%end%>
 <%= link_to 'New contact', new_contact_path %>
 <table>
   <tr>
