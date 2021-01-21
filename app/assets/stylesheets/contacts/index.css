@@ -1,0 +1,44 @@
+body{
+  font-family: 'Roboto', Calibri, Arial,    sans-serif;
+font-weight: 100;
+color : #48a770;
+background-color: #fff;
+}
+h1{
+font-family: 'Roboto';
+font-weight: 100;
+
+}
+.button-add{
+background:  #48a770;
+color: #fff; 
+}
+
+.button-add :hover{
+background:  #fff;
+color:#48a770; 
+}
+
+td{
+color: #555 ;
+font-weight: 300;
+vertical-align: middle !important;
+
+
+}
+
+.avatar{
+width: 50px;
+border: 2px solid #bbb;
+}
+.btn-remove{
+color: #e04242;
+}
+
+.btn-edit{
+color: #16A085;
+}
+
+.h-50{
+  height: 50px!important;
+}
