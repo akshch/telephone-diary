@@ -1,10 +1,11 @@
 class ContactsController < ApplicationController
+  before_action :authorize
 
   def index
     if params[:search].present?
-      @contacts = Contact.where("first_name =? or mobile_number =?", params[:search], params[:search])
+      @contacts = Contact.where("first_name =? or landline_number =?", params[:search], params[:search])
     else
-      @contacts = Contact.all
+      @contacts = Contact.all.order("created_at DESC")
     end
   end
 
@@ -23,7 +24,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
-    @contact.update(counter: @contact.counter+1)
+    @contact.update_columns(counter: @contact.counter+1)
   end
 
   def edit
