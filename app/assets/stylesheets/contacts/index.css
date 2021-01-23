@@ -42,3 +42,8 @@ color: #16A085;
 .h-50{
   height: 50px!important;
 }
+
+.wd-dl{
+  width: 50%;
+  display: inline !important;
+}
