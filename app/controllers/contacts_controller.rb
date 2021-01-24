@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to @contact
     else
-      redirect_to contacts_new_path
+      redirect_to new_contact_path
     end
   end
 
