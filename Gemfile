@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
  gem "paperclip", "~> 6.0.0"
  gem "chartkick"
+ gem 'groupdate'
+
 
 
 # Use ActiveStorage variant 

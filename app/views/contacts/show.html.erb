@@ -13,7 +13,7 @@
                       <h4>John Doe</h4>
                       <p class="text-secondary mb-1">Contact Added on</p><p><%= @contact.created_at.strftime("%d-%b-%Y")%></p>
                       <p class="text-muted font-size-sm">Contact Edited on</p><p><%= @contact.updated_at.strftime("%d-%b-%Y")%></p>
-                      <p class="text-muted font-size-sm">Contact Viewed <h5><%= @contact.counter%></h5> times</p>
+                      <p class="text-muted font-size-sm">Contact Viewed <h5><%= @contact_track %></h5> times</p>
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="col-sm-12 mb-3">
                   <div class="card h-100">
                     <div class="card-body">
-                      <%= pie_chart Contact.group(:counter).count %>
+                      <%= column_chart ContactTrack.where("contact_id =? and created_at >=?", @contact.id, Date.today - 7).group_by_day(:created_at).count %>
                     </div>
                   </div>
                 </div>

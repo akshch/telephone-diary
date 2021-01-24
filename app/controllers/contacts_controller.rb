@@ -24,7 +24,8 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
-    @contact.update_columns(counter: @contact.counter+1)
+    @contact.contact_tracks.create!
+    @contact_track = ContactTrack.where(contact_id: @contact.id).count
   end
 
   def edit
