@@ -1,67 +1,9 @@
 <%= stylesheet_link_tag 'users/new'%>
 
 <div class="container">
-<div class="row">
-<%= form_for @contact do |f| %>
-
-<% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@contact.errors.count, "error") %> prohibited
-        this contact from being saved:
-      </h2>
-      <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name, required: true %>
-  </p>
- 
-  <p>
-    <%= f.label :middle_name %><br>
-    <%= f.text_field :middle_name %>
-  </p>
-
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name, required: true %>
-  </p>
-
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :mobile_number %><br>
-    <%= f.text_field :mobile_number %>
-  </p>
-
-  <p>
-    <%= f.label :landline_number %><br>
-    <%= f.text_field :landline_number %>
-  </p>
-
-  <p>
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes, size: '100x5' %>
-  </p>
-
-  <p>
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
-  </p>
-
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-</div>
+  <div class="row">
+    <%= form_for @contact do |f| %>
+    <%= render 'form', f: f %>
+    <% end %>
+  </div>
 </div>
